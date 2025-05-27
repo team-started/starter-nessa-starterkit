@@ -68,15 +68,12 @@ module.exports = {
         }),
         new ESLintPlugin(),
         new StylelintPlugin(),
-        // Removes/cleans build folders and unused assets when rebuilding
-        // new CleanWebpackPlugin(),
-        // TODO: Nicht sicher, ob das hier noch gebraucht wird
-        // new webpack.ProvidePlugin({
-        //     $: 'jquery',
-        //     jQuery: 'jquery',
-        //     'window.jQuery': 'jquery',
-        //     isotope: 'isotope-layout',
-        // }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            isotope: 'isotope-layout',
+        }),
         new WebpackBar(isDevelopment ? DEV.barOption : BUILD.barOption),
     ],
 
